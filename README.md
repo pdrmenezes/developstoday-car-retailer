@@ -1,36 +1,106 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# DevelopsToday Car Retailer
 
-## Getting Started
+<table>
+  <tr>
+    <td>Home</td>
+     <td>Alowed to go to the next page</td>
+     <td>Cars available for the selected search</td>
+  </tr>
+  <tr>
+    <td><img src="public/screenshots/ss-1.webp" width=270 height="auto"></td>
+    <td><img src="public/screenshots/ss-2.webp" width=270 height="auto"></td>
+    <td><img src="public/screenshots/ss-3.webp" width=270 height="auto"></td>
+  </tr>
+ </table>
 
-First, run the development server:
+### Overview
+
+- The project allows for users to search for cars based on their make and model year.
+  - If one of them is not selected the user is not allowed to go to the next page.
+- The routes are statically generated for improved navigation speed and SEO
+- The responsive UI was created using TailwindCSS and Lucide for the icons.
+- The content of the application is provided by the [United States Department of Transportation API](https://vpic.nhtsa.dot.gov/api/)
+
+### Technologies Used
+
+- Next.js: A React framework for server-side rendering and static site generation.
+- React: A JavaScript library for building user interfaces.
+- Tailwind CSS: A utility-first CSS framework for rapid UI development.
+- TypeScript: A typed superset of JavaScript that compiles to plain JavaScript.
+- ESLint: A tool for identifying and fixing problems in JavaScript code.
+- Prettier: An opinionated code formatter.
+- PostCSS: A tool for transforming CSS with JavaScript plugins.
+- Lucide React: A library of icons for React.
+
+### Project Structure
+
+```
+.next/
+public/
+README.md
+src/
+  app/
+  assets/
+  components/
+  constants/
+  data/
+  lib/
+  types/
+  utils/
+.env.example
+.gitignore
+package.json
+pnpm-lock.yaml
+tailwind.config.ts
+tsconfig.json
+```
+
+### Key Configuration Files
+
+- `package.json`: Defines the project's dependencies and scripts.
+- `tsconfig.json`: Configures TypeScript options.
+- `tailwind.config.ts`: Configures Tailwind CSS.
+- `postcss.config.mjs`: Configures PostCSS.
+- `eslint.config.mjs`: Configures ESLint.
+- `.prettierrc`: Configures Prettier.
+
+### Scripts
+
+- `dev`: Starts the development server.
+- `build`: Builds the project for production.
+- `start`: Starts the production server.
+- `lint`: Runs ESLint to check for code quality issues.
+
+### Technical Decisions
+
+- Next.js: Chosen for its ability to handle server-side rendering and static site generation, which improves performance and SEO.
+- TypeScript: Used for type safety, which helps catch errors early in the development process.
+- Tailwind CSS: Selected for its utility-first approach, which allows for rapid UI development.
+- ESLint and Prettier: Integrated for maintaining code quality and consistent formatting.
+- PostCSS: Utilized for transforming CSS with JavaScript plugins, enhancing the styling capabilities.
+
+### Getting Started
+
+1. Install dependencies:
+
+```bash
+npm install
+```
+
+2. Run the development server:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+3. Or build the project:
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+npm run build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. And start the production server:
 
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+```bash
+npm run start
+```
