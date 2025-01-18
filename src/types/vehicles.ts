@@ -1,4 +1,4 @@
-type GetMakesForVehicleTypeParams = {};
+type GetMakesForVehicleTypeParams = never;
 export type GetModelsForMakeIdAndYearParams = {
   makeId: string;
   year: string;
@@ -34,10 +34,10 @@ export type EndpointParams<T extends Endpoint> = T extends "GetMakesForVehicleTy
   ? GetMakesForVehicleTypeParams
   : T extends "GetModelsForMakeIdYear"
     ? GetModelsForMakeIdAndYearParams
-    : any;
+    : never;
 
 export type EndpointResponse<T extends Endpoint> = T extends "GetMakesForVehicleType"
   ? GetMakesForVehicleTypeResponse
   : T extends "GetModelsForMakeIdYear"
     ? GetModelsForMakeIdAndYearResponse
-    : any;
+    : never;

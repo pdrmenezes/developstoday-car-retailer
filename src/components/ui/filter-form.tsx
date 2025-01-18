@@ -27,7 +27,7 @@ export function FilterForm({ vehicleMakes }: FilterFormProps) {
 
   return (
     <>
-      <div className="shadow-shape flex h-16 items-center gap-3 rounded-xl bg-neutral-900 px-4">
+      <div className="flex h-16 items-center gap-3 rounded-xl bg-neutral-900 px-4 shadow-shape">
         <div className="flex flex-1 items-center gap-2">
           <select
             className="h-10 w-full cursor-pointer bg-transparent text-lg hover:brightness-110"
@@ -62,7 +62,7 @@ export function FilterForm({ vehicleMakes }: FilterFormProps) {
           onClick={(e) => {
             if (!isNextAvailable) {
               e.preventDefault();
-              !isNextAvailable && setErrorMessage("Please fill in both fields");
+              setErrorMessage("Please fill in both fields");
             }
           }}
         >
