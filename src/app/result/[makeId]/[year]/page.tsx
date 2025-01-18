@@ -24,7 +24,9 @@ export default async function ResultPage({ params }: { params: Promise<{ makeId:
 
   return (
     <div>
-      <h2 className="mb-8 font-mono text-3xl font-bold">{titleCase(results?.Results?.[0].Make_Name ?? "")}</h2>
+      {results?.Results?.[0].Make_Name && (
+        <h2 className="mb-8 font-mono text-3xl font-bold">{titleCase(results?.Results?.[0].Make_Name)}</h2>
+      )}
       <section className="grid grid-cols-[repeat(auto-fit,minmax(25ch,1fr))] gap-4">
         <Suspense
           fallback={
@@ -44,7 +46,7 @@ export default async function ResultPage({ params }: { params: Promise<{ makeId:
               />
             ))
           ) : (
-            <p className="text-center text-3xl">Sorry, there are no cars for this make and year</p>
+            <p className="text-center text-lg">Sorry, there are no cars for this make and year</p>
           )}
         </Suspense>
       </section>
